@@ -84,6 +84,8 @@ public class Home extends javax.swing.JFrame {
         diskon = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        mkn = new javax.swing.JLabel();
+        mkn1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tData = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
@@ -309,6 +311,14 @@ public class Home extends javax.swing.JFrame {
         jPanel3.add(jLabel12);
         jLabel12.setBounds(340, 100, 20, 13);
 
+        mkn.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel3.add(mkn);
+        mkn.setBounds(390, 20, 80, 30);
+
+        mkn1.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel3.add(mkn1);
+        mkn1.setBounds(390, 20, 80, 30);
+
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 90, 560, 330);
 
@@ -474,7 +484,7 @@ public class Home extends javax.swing.JFrame {
          if ("".equals(id.getText()) || "".equals(Hrg_mkn.getText()) || "".equals(Hrg_mnm.getText()) || "".equals(bayar.getText()) || kembali.equals("") || "".equals(total.getText())) {
             JOptionPane.showMessageDialog(this, "Harap Lengkapi Data","ERROR", JOptionPane.WARNING_MESSAGE);
         } else {
-            String SQL = "INSERT INTO tb_harga (id,kasir,makanan,hrg_makan,minum,hrg_minum,bayar,kembali,total) " + "VALUES('"+id.getText()+"','"+kasir.getText()+"','"+makan.getText()+"','"+Hrg_mkn.getText()+"','"+minum.getText()+"','"+Hrg_mnm.getText()+"','"+bayar.getText()+"','"+kembali.getText()+"','"+total.getText()+"')";                    
+            String SQL = "INSERT INTO tb_harga (id,kasir,makanan,hrg_makan,minum,hrg_minum,bayar,kembali,total) " + "VALUES('"+id.getText()+"','"+kasir.getText()+"','"+mkn.getText()+"','"+Hrg_mkn.getText()+"','"+mkn1.getText()+"','"+Hrg_mnm.getText()+"','"+bayar.getText()+"','"+kembali.getText()+"','"+total.getText()+"')";                    
             int status = KoneksiDB.execute(SQL);
         if (status == 1) {
             JOptionPane.showMessageDialog(this,"Data berhasil ditambahkan","Sukses",JOptionPane.INFORMATION_MESSAGE);
@@ -523,6 +533,7 @@ public class Home extends javax.swing.JFrame {
          
         if (jComboBox2.getSelectedItem().equals("Sogem")){
             mnm = "Sogem";
+            mkn1.setText("Sogem");
             Hrg_mnm.setText("25000");
             hsl = 25000 * a;
             Hrg_mnm.setText(hsl.toString());
@@ -530,6 +541,7 @@ public class Home extends javax.swing.JFrame {
         else
         if( jComboBox2.getSelectedItem().equals("Teh Anget")){
              mnm = ("Teh Anget");
+             mkn1.setText("Teh Anget");
              Hrg_mnm.setText("10000");
              hsl = 10000 * a;
              Hrg_mnm.setText(hsl.toString());
@@ -537,6 +549,7 @@ public class Home extends javax.swing.JFrame {
         else
         if( jComboBox2.getSelectedItem().equals("Kopi")){
             mnm=("Kopi ");
+            mkn1.setText("Kopi");
             Hrg_mnm.setText("15000");       
             hsl = 15000 * a;
             Hrg_mnm.setText(hsl.toString());
@@ -544,6 +557,7 @@ public class Home extends javax.swing.JFrame {
          else
         if( jComboBox2.getSelectedItem().equals("Milk Shake Coklat")){
             mnm =("Milk Shake Coklat");
+            mkn1.setText("Milk Shake Coklat");
             Hrg_mnm.setText("20000");       
             hsl = 20000 * a;
             Hrg_mnm.setText(hsl.toString());
@@ -561,6 +575,7 @@ public class Home extends javax.swing.JFrame {
        
         if (jComboBox1.getSelectedItem().equals("Nasgor Batak")){
             Makanan = "Nasgor Batak";
+            mkn.setText("Nasgor Batak");
             Hrg_mkn.setText("25000");
             hsl = 25000 * a;
             Hrg_mkn.setText(hsl.toString());
@@ -568,6 +583,7 @@ public class Home extends javax.swing.JFrame {
         else
         if( jComboBox1.getSelectedItem().equals("Roti Bakar")){
             Makanan = ("Roti Bakar");
+            mkn.setText("Roti Bakar");
             Hrg_mkn.setText("10000");
             hsl = 10000 * a;
             Hrg_mkn.setText(hsl.toString());
@@ -575,6 +591,7 @@ public class Home extends javax.swing.JFrame {
         else
         if( jComboBox1.getSelectedItem().equals("Mie Godok")){
             Makanan=("Mie Godok ");
+             Makanan=("Mie Godok ");
             Hrg_mkn.setText("15000");   
             hsl = 15000 * a;
             Hrg_mkn.setText(hsl.toString());
@@ -582,6 +599,7 @@ public class Home extends javax.swing.JFrame {
          else
         if( jComboBox1.getSelectedItem().equals("Nasi Campur")){
             Makanan=("Nasi Campur ");
+            mkn.setText("Nasi Campur");
             Hrg_mkn.setText("20000");    
             hsl = 20000 * a;
             Hrg_mkn.setText(hsl.toString());
@@ -740,6 +758,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel lblJam;
     private javax.swing.JLabel makan;
     private javax.swing.JLabel minum;
+    private javax.swing.JLabel mkn;
+    private javax.swing.JLabel mkn1;
     private javax.swing.JButton print;
     private javax.swing.JButton refresh;
     private javax.swing.JButton save;
